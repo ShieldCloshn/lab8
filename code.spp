@@ -137,7 +137,7 @@ int read(detal *record)
  cout<<"Сведенья о деталях\n";
  for (i=0;i<kv;i++)
  {
-	 cout<<"Сведенья № "<<i<<"\n"<<endl;
+	 cout<<"Сведенья № "<<i+1<<"\n"<<endl;
 	 cout<<"Инвентарный номер "<<record[i].num<<endl;
 	 cout<<"Вес "<<record[i].ves<<endl;
 	 cout<<"цена "<<record[i].price<<endl;
@@ -243,15 +243,16 @@ cout<<"ввод сведений о деталях c знаком качеств
 		 if (((record[i].date.y<record[j].date.y) || (record[i].date.y==record[j].date.y && record[i].date.m<record[j].date.m)) || (record[i].date.y==record[j].date.y && record[i].date.m==record[j].date.m && record[i].date.d<record[j].date.d))
 			 temp=record[i];
              record[i]=record[j];
-			 record[j]=temp;}
-cout<<"Сведенья № "<<i+1<<"\n"<<endl;
+			 record[j]=temp;}}
+ for (i=0;i<kv;i++){
+ cout<<"Сведенья № "<<i+1<<"\n"<<endl;
 	 cout<<"Инвентарный номер "<<record[i].num<<endl;
 	 cout<<"Вес "<<record[i].ves<<endl;
 	 cout<<"цена "<<record[i].price<<endl;
 	 cout<<"дата производства "<<record[i].date.d<<"."<<record[i].date.m<<"."<<record[i].date.y<<endl;
 	 cout<<"Знак качества "<<record[i].status<<endl;
-	 cout<<"Объём производства "<<record[i].ob<<endl;
-}
+	 cout<<"Объём производства "<<record[i].ob<<"\n"<<endl;
+ }
  cout<<"конец файла"<<endl;
  fclose(f);
  system("pause");
